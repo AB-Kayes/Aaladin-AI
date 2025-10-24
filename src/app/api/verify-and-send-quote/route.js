@@ -61,7 +61,7 @@ export async function POST(request) {
     // Send quote request email to your business email
     const { data, error } = await resend.emails.send({
       from: "Aaladin AI <onboarding@resend.dev>", // Using Resend's default domain for testing
-      to: ["jaznanofficial@gmail.com"], // Updated business email
+      to: ["name0198080@gmail.com"], // Updated business email
       subject: `New Quote Request from ${formData.name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 700px; margin: 0 auto; padding: 20px;">
@@ -106,9 +106,8 @@ export async function POST(request) {
           <div style="background: #f8f9fa; padding: 25px; border-radius: 10px;">
             <h2 style="color: #333; margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">Additional Details</h2>
             <div style="background: white; padding: 15px; border-radius: 5px;">
-              <p style="color: #333; margin: 0; line-height: 1.6; white-space: pre-wrap;">${
-                formData.details || "No additional details provided."
-              }</p>
+              <p style="color: #333; margin: 0; line-height: 1.6; white-space: pre-wrap;">${formData.details || "No additional details provided."
+        }</p>
             </div>
           </div>
           
@@ -157,8 +156,7 @@ export async function POST(request) {
           
           <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
             <p style="color: #999; font-size: 14px;">
-              If you have any questions, feel free to reply to this email or contact us at jaznanofficial@gmail.com
-            </p>
+              If you have any questions, feel free to reply to this email or contact us at name0198080@gmail.com
           </div>
         </div>
       `,

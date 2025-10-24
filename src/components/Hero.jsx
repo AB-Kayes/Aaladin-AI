@@ -20,16 +20,16 @@ const Hero = () => {
       customPaddings="pt-[4.75rem] pb-16 lg:pt-[5.25rem] lg:pb-24"
     >
       <div className="container relative" ref={parallaxRef}>
-        <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
+        <div className="relative z-1 max-w-[64rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
           <motion.h1
             className="h1 mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            We Are Your Partner in Digital Transformation – {` `}
+            We Simplify Complexity, So You Can Focus on Growth – {` `}
             <span className="inline-block relative">
-              Aaladin{" "}
+              AaladinAI{" "}
               <img
                 src={curve}
                 className="absolute top-full left-0 w-full xl:-mt-2"
@@ -38,8 +38,6 @@ const Hero = () => {
                 alt="Curve"
               />
             </span>{" "}
-            <br />
-            Your Wish, Our AI.
           </motion.h1>
           <motion.p
             className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8"
@@ -59,21 +57,21 @@ const Hero = () => {
           </motion.div>
         </div>
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
-          <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
+          <div className="relative z-1 p-0.5 rounded-2xl">
             <div className="relative bg-n-8 rounded-[1rem]">
-              <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
+              {/* <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" /> */}
 
-              <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
+              <div className="aspect-[33/40] rounded-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
                 <img
                   src={robot}
-                  className="w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%]"
+                  className="w-full h-full object-cover"
                   width={1024}
                   height={490}
                   alt="AI"
                 />
 
-                <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" />
-
+                {/* <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" /> */}
+                <div>
                 <ScrollParallax isAbsolutelyPositioned>
                   <Notification
                     className="hidden absolute -right-20 top-10 xl:flex"
@@ -115,6 +113,7 @@ const Hero = () => {
                     title="Cloud Deployment"
                   />
                 </ScrollParallax>
+                </div>
               </div>
             </div>
 

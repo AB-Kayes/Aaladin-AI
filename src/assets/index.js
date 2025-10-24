@@ -22,11 +22,11 @@ export const disc02 = "/assets/disc-02.svg";
 export const chromecast = "/assets/chrome-cast.svg";
 export const sliders04 = "/assets/sliders-04.svg";
 export const loading = "/assets/loading.png";
-export const background = "/assets/background.jpg";
+export const background = "/assets/background.png";
 
 // Hero assets
 export const curve = "/assets/hero/curve.png";
-export const robot = "/assets/hero/robot.jpg";
+export const robot = "/assets/hero/background.png";
 export const heroBackground = "/assets/hero/hero-background.jpg";
 
 // Collaboration assets

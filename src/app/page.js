@@ -36,9 +36,9 @@ const App = async () => {
         <AnimatedSection direction="fade" duration={0.8}>
           <Hero />
         </AnimatedSection>
-        <AnimatedSection direction="up" delay={0.2}>
+        {/* <AnimatedSection direction="up" delay={0.2}>
           <ServicesSection />
-        </AnimatedSection>
+        </AnimatedSection> */}
         <AnimatedSection direction="left" delay={0.1}>
           <ProcessSection />
         </AnimatedSection>

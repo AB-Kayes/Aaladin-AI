@@ -53,32 +53,32 @@ export const navigation = [
     title: "Services",
     url: "/#services",
   },
-  {
-    id: "2",
-    title: "Process",
-    url: "/#process",
-  },
+  // {
+  //   id: "2",
+  //   title: "Process",
+  //   url: "/#process",
+  // },
 
   {
     id: "4",
     title: "Projects",
     url: "/#projects",
   },
-  {
-    id: "5",
-    title: "Testimonials",
-    url: "/#testimonials",
-  },
+  // {
+  //   id: "5",
+  //   title: "Testimonials",
+  //   url: "/#testimonials",
+  // },
   {
     id: "6",
     title: "Blog",
     url: "/blog",
   },
-  {
-    id: "7",
-    title: "Our Universe",
-    url: "/universe",
-  },
+  // {
+  //   id: "7",
+  //   title: "Our Universe",
+  //   url: "/universe",
+  // },
 ];
 
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
