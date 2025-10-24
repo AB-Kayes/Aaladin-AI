@@ -48,11 +48,11 @@ export const navigation = [
     title: "Home",
     url: "/",
   },
-  {
-    id: "1",
-    title: "Services",
-    url: "/#services",
-  },
+  // {
+  //   id: "1",
+  //   title: "Services",
+  //   url: "/#services",
+  // },
   // {
   //   id: "2",
   //   title: "Process",
@@ -75,7 +75,7 @@ export const navigation = [
     url: "/blog",
   },
   // {
-  //   id: "7",
+  //   id: "8",
   //   title: "Our Universe",
   //   url: "/universe",
   // },

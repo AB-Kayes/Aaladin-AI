@@ -9,11 +9,7 @@ import TestimonialSection from "@/components/TestimonialSection";
 import Contact from "@/components/Contact";
 import AnimatedSection from "@/components/AnimatedSection";
 import BlogPreview from "@/components/BlogPreview";
-import {
-  getFeaturedTestimonials,
-  getFeaturedBlogPosts,
-  getFeaturedProjects,
-} from "@/lib/sanity";
+import { getFeaturedProjects } from "@/data/projects";
 
 export const metadata = {
   title: "Aaladin AI - Premium AI & Web Development Services",
@@ -21,13 +17,9 @@ export const metadata = {
     "Transform your business with cutting-edge AI solutions and premium web development. Expert team delivering innovative digital experiences.",
 };
 
-const App = async () => {
-  // Fetch data from Sanity
-  const [testimonials, blogPosts, projects] = await Promise.all([
-    getFeaturedTestimonials(),
-    getFeaturedBlogPosts(),
-    getFeaturedProjects(),
-  ]);
+const App = () => {
+  // Get featured projects from direct data
+  const projects = getFeaturedProjects();
 
   return (
     <>
@@ -45,14 +37,9 @@ const App = async () => {
         <AnimatedSection direction="up" delay={0.2}>
           <ProjectsSection projects={projects} />
         </AnimatedSection>
-        <AnimatedSection direction="right" delay={0.1}>
-          <TestimonialSection testimonials={testimonials} />
-        </AnimatedSection>
-        {blogPosts.length > 0 && (
-          <AnimatedSection direction="up" delay={0.2}>
-            <BlogPreview posts={blogPosts} />
-          </AnimatedSection>
-        )}
+        {/* <AnimatedSection direction="right" delay={0.1}>
+          <TestimonialSection testimonials={[]} />
+        </AnimatedSection> */}
         <AnimatedSection direction="scale" delay={0.2}>
           <Contact />
         </AnimatedSection>

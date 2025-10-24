@@ -4,11 +4,12 @@ import ButtonGradient from "@/components/svg/ButtonGradient";
 import Contact from "@/components/Contact";
 
 export const metadata = {
-  title: "Contact Us - Aaladin AI",
-  description: "Get in touch with our team for your next AI project.",
+  title: "Contact Us - Aaladin AI | Get a Quote",
+  description:
+    "Get in touch with Aaladin AI for your next AI project. Contact us for a free consultation and quote.",
 };
 
-export default function ContactPage() {
+const ContactPage = () => {
   return (
     <>
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
@@ -19,4 +20,6 @@ export default function ContactPage() {
       <ButtonGradient />
     </>
   );
-}
+};
+
+export default ContactPage;

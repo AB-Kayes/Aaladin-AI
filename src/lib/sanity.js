@@ -56,6 +56,33 @@ export const queries = {
     liveUrl
   }`,
 
+  projectsByCategory: `*[_type == "project" && category == $category] | order(order asc, _createdAt desc) {
+    _id,
+    title,
+    slug,
+    description,
+    shortDescription,
+    client,
+    status,
+    featured,
+    completionDate,
+    currentStatus,
+    problem,
+    solution,
+    technologies,
+    features,
+    results,
+    mainImage,
+    screenshots,
+    liveUrl,
+    appStoreUrl,
+    playStoreUrl,
+    chromeStoreUrl,
+    githubUrl,
+    order,
+    category
+  }`,
+
   projectBySlug: `*[_type == "project" && slug.current == $slug][0] {
     _id,
     title,
@@ -173,6 +200,10 @@ export async function getProjects() {
 
 export async function getFeaturedProjects() {
   return await client.fetch(queries.featuredProjects);
+}
+
+export async function getProjectsByCategory(category) {
+  return await client.fetch(queries.projectsByCategory, { category });
 }
 
 export async function getProjectBySlug(slug) {

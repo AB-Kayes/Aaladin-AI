@@ -59,6 +59,19 @@ export default {
       initialValue: false,
     },
     {
+      name: "category",
+      title: "Project Category",
+      type: "string",
+      options: {
+        list: [
+          { title: "Fundamental Project", value: "fundamental" },
+          { title: "Incremental Project", value: "incremental" },
+        ],
+      },
+      validation: (Rule) => Rule.required(),
+      description: "Choose the project category",
+    },
+    {
       name: "completionDate",
       title: "Completion Date",
       type: "string",

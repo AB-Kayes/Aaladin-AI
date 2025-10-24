@@ -5,7 +5,6 @@ import Section from "./Section";
 import Heading from "./Heading";
 import Button from "./Button";
 import { check2, grid, loading1 } from "@/assets";
-import { urlFor } from "@/lib/sanity";
 import ButtonSvg from "@/components/svg/ButtonSvg";
 
 // External Button component for live project links
@@ -58,7 +57,11 @@ const ProjectDetailsPage = ({ project, relatedProjects = [] }) => {
             {/* Back Button */}
             <div className="mb-8">
               <Link
-                href="/projects"
+                href={
+                  project.category === "fundamental"
+                    ? "/projects/fundamental"
+                    : "/projects/incremental"
+                }
                 className="inline-flex items-center text-n-4 hover:text-n-1 transition-colors"
               >
                 <svg
@@ -74,7 +77,11 @@ const ProjectDetailsPage = ({ project, relatedProjects = [] }) => {
                     d="M15 19l-7-7 7-7"
                   />
                 </svg>
-                Back to Projects
+                Back to{" "}
+                {project.category === "fundamental"
+                  ? "Fundamental"
+                  : "Incremental"}{" "}
+                Projects
               </Link>
             </div>
 
@@ -205,7 +212,7 @@ const ProjectDetailsPage = ({ project, relatedProjects = [] }) => {
                   </a>
                 )}
 
-                {!project.liveUrl &&
+                {/* {!project.liveUrl &&
                   !project.appStoreUrl &&
                   !project.playStoreUrl &&
                   !project.chromeStoreUrl &&
@@ -226,7 +233,7 @@ const ProjectDetailsPage = ({ project, relatedProjects = [] }) => {
                       </svg>
                       Coming Soon
                     </div>
-                  )}
+                  )} */}
               </div>
             </div>
           </div>
@@ -257,18 +264,7 @@ const ProjectDetailsPage = ({ project, relatedProjects = [] }) => {
                 <img
                   className="w-full rounded-2xl"
                   src={
-                    project.screenshots?.[selectedImage]?.asset
-                      ? urlFor(project.screenshots[selectedImage])
-                          .width(800)
-                          .height(600)
-                          .url()
-                      : project.screenshots?.[selectedImage] ||
-                        (project.mainImage?.asset
-                          ? urlFor(project.mainImage)
-                              .width(800)
-                              .height(600)
-                              .url()
-                          : project.mainImage)
+                    project.screenshots?.[selectedImage] || project.mainImage
                   }
                   alt={`${project.title} Screenshot ${selectedImage + 1}`}
                 />
@@ -291,11 +287,7 @@ const ProjectDetailsPage = ({ project, relatedProjects = [] }) => {
                     <div className="relative bg-n-8 rounded-lg overflow-hidden">
                       <img
                         className="w-full h-20 object-cover"
-                        src={
-                          screenshot?.asset
-                            ? urlFor(screenshot).width(200).height(150).url()
-                            : screenshot
-                        }
+                        src={screenshot}
                         alt={`Screenshot ${index + 1}`}
                       />
                     </div>
@@ -429,8 +421,20 @@ const ProjectDetailsPage = ({ project, relatedProjects = [] }) => {
               <Link href="/#contact">
                 <Button>Get a Quote</Button>
               </Link>
-              <Link href="/projects">
-                <Button white>View More Projects</Button>
+              <Link
+                href={
+                  project.category === "fundamental"
+                    ? "/projects/fundamental"
+                    : "/projects/incremental"
+                }
+              >
+                <Button white>
+                  View More{" "}
+                  {project.category === "fundamental"
+                    ? "Fundamental"
+                    : "Incremental"}{" "}
+                  Projects
+                </Button>
               </Link>
             </div>
           </div>

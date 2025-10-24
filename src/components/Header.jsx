@@ -8,7 +8,7 @@ import { navigation } from "../constants";
 import Button from "./Button";
 import MenuSvg from "@/components/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Header = () => {
   // get current hash for active nav highlighting
@@ -16,6 +16,8 @@ const Header = () => {
     hash: typeof window !== "undefined" ? window.location.hash : "",
   };
   const [openNavigation, setOpenNavigation] = useState(false);
+  const [openProjectsDropdown, setOpenProjectsDropdown] = useState(false);
+  const dropdownRef = useRef(null);
 
   const toggleNavigation = () => {
     if (openNavigation) {
@@ -33,6 +35,23 @@ const Header = () => {
     enablePageScroll();
     setOpenNavigation(false);
   };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setOpenProjectsDropdown(false);
+      }
+    };
+
+    if (openProjectsDropdown) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [openProjectsDropdown]);
 
   return (
     <div className="fixed top-5 z-50 w-full">
@@ -57,27 +76,98 @@ const Header = () => {
             } fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:items-center lg:ml-auto lg:bg-transparent`}
           >
             <div className="relative z-2 flex flex-col items-center justify-center lg:flex-row lg:items-center lg:gap-4">
-              {navigation.map((item) => (
-                <Link
-                  key={item.id}
-                  href={item.url}
-                  onClick={handleClick}
-                  className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
-                    item.onlyMobile ? "lg:hidden" : ""
-                  } px-6 py-6 md:py-4 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
-                    item.url === pathname.hash
-                      ? "z-2 lg:text-n-1"
-                      : "lg:text-n-1/50"
-                  } lg:leading-5 lg:hover:text-n-1 xl:px-4`}
-                >
-                  {item.title}
-                </Link>
-              ))}
+              {navigation.map((item) => {
+                // Handle Projects dropdown
+                if (item.title === "Projects") {
+                  return (
+                    <div
+                      key={item.id}
+                      className="relative group"
+                      ref={dropdownRef}
+                    >
+                      <button
+                        onClick={() =>
+                          setOpenProjectsDropdown(!openProjectsDropdown)
+                        }
+                        className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
+                          item.onlyMobile ? "lg:hidden" : ""
+                        } px-6 py-6 md:py-4 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
+                          item.url === pathname.hash
+                            ? "z-2 lg:text-n-1"
+                            : "lg:text-n-1/50"
+                        } lg:leading-5 lg:hover:text-n-1 xl:px-4 flex items-center`}
+                      >
+                        {item.title}
+                        <svg
+                          className="w-4 h-4 ml-1 transition-transform group-hover:rotate-180"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </button>
+
+                      {/* Dropdown Menu */}
+                      {openProjectsDropdown && (
+                        <div className="absolute top-full left-0 mt-2 w-64 bg-n-8 border border-n-6 rounded-xl shadow-xl z-50">
+                          <div className="p-2">
+                            <Link
+                              href="/projects/fundamental"
+                              onClick={() => {
+                                setOpenProjectsDropdown(false);
+                                handleClick();
+                              }}
+                              className="block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 px-6 py-6 md:py-4 lg:-mr-0.25 lg:text-xs lg:font-semibold lg:leading-5 lg:hover:text-n-1 xl:px-4 hover:bg-n-7 rounded-lg"
+                            >
+                              Fundamental Projects
+                            </Link>
+
+                            <Link
+                              href="/projects/incremental"
+                              onClick={() => {
+                                setOpenProjectsDropdown(false);
+                                handleClick();
+                              }}
+                              className="block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 px-6 py-6 md:py-4 lg:-mr-0.25 lg:text-xs lg:font-semibold lg:leading-5 lg:hover:text-n-1 xl:px-4 hover:bg-n-7 rounded-lg"
+                            >
+                              Incremental Projects
+                            </Link>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+
+                // Regular navigation items
+                return (
+                  <Link
+                    key={item.id}
+                    href={item.url}
+                    onClick={handleClick}
+                    className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
+                      item.onlyMobile ? "lg:hidden" : ""
+                    } px-6 py-6 md:py-4 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
+                      item.url === pathname.hash
+                        ? "z-2 lg:text-n-1"
+                        : "lg:text-n-1/50"
+                    } lg:leading-5 lg:hover:text-n-1 xl:px-4`}
+                  >
+                    {item.title}
+                  </Link>
+                );
+              })}
 
               {/* Get in touch button */}
               <div className="mt-6 lg:mt-0 lg:ml-4">
                 <Button
-                  href="#contact"
+                  href="/contact"
                   onClick={handleClick}
                   className="text-xs font-semibold"
                   px="px-4"
