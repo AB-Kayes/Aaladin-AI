@@ -5,14 +5,69 @@ import { toast } from "sonner";
 import Section from "./Section";
 import Heading from "./Heading";
 import Button from "./Button";
-import VerificationModal from "./VerificationModal";
+// import VerificationModal from "./VerificationModal";
 import { check } from "@/assets";
 
 const Contact = () => {
-  const [isVerificationModalOpen, setIsVerificationModalOpen] = useState(false);
+  // const [isVerificationModalOpen, setIsVerificationModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [isVerifying, setIsVerifying] = useState(false);
-  const [currentFormData, setCurrentFormData] = useState(null);
+  // const [isVerifying, setIsVerifying] = useState(false);
+  // const [currentFormData, setCurrentFormData] = useState(null);
+
+  // EmailJS API function
+  const sendEmail = async (templateParams, emailType) => {
+    // Debug: Check environment variables
+    console.log("EmailJS Environment Variables:");
+    console.log("  SERVICE_ID:", process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
+    console.log("  TEMPLATE_ID:", process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID);
+    console.log("  PUBLIC_KEY:", process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+
+    const data = {
+      service_id: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+      template_id: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+      user_id: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+      template_params: templateParams,
+    };
+
+    console.log(`Sending ${emailType} email with data:`, data);
+
+    try {
+      const response = await fetch(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      console.log(`EmailJS ${emailType} response status:`, response.status);
+      console.log(
+        `EmailJS ${emailType} response headers:`,
+        Object.fromEntries(response.headers.entries())
+      );
+
+      let result;
+      const contentType = response.headers.get("content-type");
+
+      if (contentType && contentType.includes("application/json")) {
+        result = await response.json();
+      } else {
+        // Handle plain text response (like "OK")
+        const textResult = await response.text();
+        result = { message: textResult };
+      }
+
+      console.log(`EmailJS ${emailType} result:`, result);
+
+      return { success: response.ok, data: result };
+    } catch (error) {
+      console.error(`EmailJS ${emailType} error:`, error);
+      return { success: false, error: error.message };
+    }
+  };
 
   const {
     register,
@@ -46,29 +101,52 @@ const Contact = () => {
     setIsLoading(true);
 
     try {
-      // Send verification email
-      const response = await fetch("/api/send-verification", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email: data.email }),
+      // Send emails directly using EmailJS from client-side
+      const servicesList =
+        data.services.length > 0 ? data.services.join(", ") : "None specified";
+
+      // Business email parameters
+      const businessEmailParams = {
+        to_email: "name0198080@gmail.com",
+        from_name: data.name,
+        from_email: data.email,
+        subject: `New Quote Request from ${data.name}`,
+        client_name: `${data.name}`,
+        client_email: data.email,
+        budget: data.budget,
+        timeline: data.timeline,
+        services: servicesList,
+        additional_details: data.details || "No additional details provided.",
+        submission_date: new Date().toLocaleString(),
+      };
+
+      console.log(
+        "Sending business email with EmailJS...",
+        businessEmailParams
+      );
+
+      // Debug: Log each variable individually
+      console.log("Business email variables:");
+      Object.keys(businessEmailParams).forEach((key) => {
+        console.log(`  ${key}:`, businessEmailParams[key]);
       });
 
-      const result = await response.json();
+      // Send business email using direct API
+      const businessResult = await sendEmail(businessEmailParams, "business");
 
-      if (response.ok) {
-        setCurrentFormData(data);
-        setIsVerificationModalOpen(true);
-        toast.success("Verification code sent to your email!", {
-          description: "Please check your inbox and enter the 6-digit code.",
+      if (businessResult.success) {
+        toast.success("Quote request sent successfully!", {
+          description:
+            "We'll get back to you within 24 hours with a detailed proposal.",
         });
+        reset();
       } else {
-        toast.error("Failed to send verification code", {
-          description: result.error || "Please try again later.",
+        toast.error("Failed to send quote request", {
+          description: "Please try again later.",
         });
       }
     } catch (error) {
+      console.error("EmailJS error:", error);
       toast.error("An error occurred", {
         description: "Please check your connection and try again.",
       });
@@ -77,50 +155,51 @@ const Contact = () => {
     }
   };
 
-  const handleVerification = async (verificationCode) => {
-    setIsVerifying(true);
+  // COMMENTED OUT VERIFICATION HANDLERS - NO LONGER NEEDED
+  // const handleVerification = async (verificationCode) => {
+  //   setIsVerifying(true);
 
-    try {
-      const response = await fetch("/api/verify-and-send-quote", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: currentFormData.email,
-          verificationCode,
-          formData: currentFormData,
-        }),
-      });
+  //   try {
+  //     const response = await fetch("/api/verify-and-send-quote", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         email: currentFormData.email,
+  //         verificationCode,
+  //         formData: currentFormData,
+  //       }),
+  //     });
 
-      const result = await response.json();
+  //     const result = await response.json();
 
-      if (response.ok) {
-        toast.success("Quote request sent successfully!", {
-          description:
-            "We'll get back to you within 24 hours with a detailed proposal.",
-        });
-        setIsVerificationModalOpen(false);
-        reset();
-        setCurrentFormData(null);
-      } else {
-        toast.error("Verification failed", {
-          description: result.error || "Please check your code and try again.",
-        });
-      }
-    } catch (error) {
-      toast.error("Verification error", {
-        description: "An error occurred during verification. Please try again.",
-      });
-    } finally {
-      setIsVerifying(false);
-    }
-  };
+  //     if (response.ok) {
+  //       toast.success("Quote request sent successfully!", {
+  //         description:
+  //           "We'll get back to you within 24 hours with a detailed proposal.",
+  //       });
+  //       setIsVerificationModalOpen(false);
+  //       reset();
+  //       setCurrentFormData(null);
+  //     } else {
+  //       toast.error("Verification failed", {
+  //         description: result.error || "Please check your code and try again.",
+  //       });
+  //     }
+  //   } catch (error) {
+  //     toast.error("Verification error", {
+  //       description: "An error occurred during verification. Please try again.",
+  //     });
+  //   } finally {
+  //     setIsVerifying(false);
+  //   }
+  // };
 
-  const closeModal = () => {
-    setIsVerificationModalOpen(false);
-    setCurrentFormData(null);
-  };
+  // const closeModal = () => {
+  //   setIsVerificationModalOpen(false);
+  //   setCurrentFormData(null);
+  // };
 
   return (
     <Section className="overflow-hidden" id="contact">
@@ -473,13 +552,14 @@ const Contact = () => {
         </div>
       </div>
 
-      <VerificationModal
+      {/* COMMENTED OUT VERIFICATION MODAL - NO LONGER NEEDED */}
+      {/* <VerificationModal
         isOpen={isVerificationModalOpen}
         onClose={closeModal}
         email={currentFormData?.email}
         onVerify={handleVerification}
         isLoading={isVerifying}
-      />
+      /> */}
     </Section>
   );
 };

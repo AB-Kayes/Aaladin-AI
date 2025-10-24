@@ -11,6 +11,7 @@
     "preview": "next start"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@portabletext/react": "^4.0.1",
     "@sanity/image-url": "^1.1.0",
     "@sanity/vision": "^4.6.0",
@@ -23,7 +24,7 @@
     "react-dom": "^19.1.1",
     "react-hook-form": "^7.62.0",
     "react-just-parallax": "^3.1.16",
-    "resend": "^6.0.1",
+    "@emailjs/browser": "^4.3.3",
     "sanity": "^4.6.0",
     "scroll-lock": "^2.1.5",
     "sonner": "^2.0.7"
