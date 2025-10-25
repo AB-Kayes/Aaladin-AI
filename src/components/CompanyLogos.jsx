@@ -12,12 +12,6 @@ const CompanyLogos = () => {
       alt: "Jamuna TV Logo", // 0-100, where 100 is full grayscale
     },
     {
-      name: "My TV",
-      src: "/assets/logos/my-tv.png",
-      alt: "My TV Logo",
-      grayscaleIntensity: 100,
-    },
-    {
       name: "Fuel AI",
       src: "/assets/logos/fuelai-logo.png",
       alt: "Fuel AI Logo",
@@ -37,6 +31,12 @@ const CompanyLogos = () => {
       name: "Ridge Park",
       src: "/assets/logos/ridge-park.png",
       alt: "Ridge Park Logo",
+      grayscaleIntensity: 100,
+    },
+    {
+      name: "My TV",
+      src: "/assets/logos/my-tv.png",
+      alt: "My TV Logo",
       grayscaleIntensity: 100,
     },
     {

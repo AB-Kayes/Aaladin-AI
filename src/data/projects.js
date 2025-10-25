@@ -146,7 +146,7 @@ export const projects = [
             "80% faster reporting",
             "Improved fraud detection"
         ],
-        mainImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop&crop=center"
+        mainImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=center"
     },
     {
         id: "trackio-transportation",
@@ -266,7 +266,7 @@ export const projects = [
             "Proactive risk management",
             "Enhanced team productivity"
         ],
-        mainImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&crop=center"
+        mainImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop&crop=center"
     },
     {
         id: "health-ai",
@@ -508,6 +508,99 @@ export const projects = [
         ],
         mainImage: "/assets/Project-Image/Halal-GPT.webp"
     },
+    {
+        id: "health-intel",
+        title: "Health Intel",
+        slug: "health-intel",
+        description: "Comprehensive hospital management system integrating POS, CRM, and ERP solutions for maintaining doctor-patient schedules, doctor schedule management, and complete healthcare facility operations with intelligent automation.",
+        shortDescription: "Hospital management system with POS, CRM, and ERP integration for healthcare operations.",
+        client: "Healthcare Facilities",
+        status: "done",
+        category: "fundamental",
+        featured: true,
+        completionDate: "Completed 2024",
+        problem: "Hospitals struggle with fragmented systems for patient management, scheduling, and operational efficiency.",
+        solution: "Developed integrated healthcare management platform combining POS, CRM, and ERP for seamless hospital operations.",
+        technologies: ["Healthcare Management", "POS Integration", "CRM Systems", "ERP Solutions", "Scheduling Automation"],
+        features: [
+            "Doctor-patient schedule management",
+            "Doctor schedule optimization",
+            "POS system integration",
+            "CRM for patient relationships",
+            "ERP for complete operations",
+            "Automated appointment scheduling",
+            "Patient record management"
+        ],
+        results: [
+            "Streamlined hospital operations",
+            "Improved patient experience",
+            "Better resource utilization",
+            "Enhanced scheduling efficiency"
+        ],
+        mainImage: "/assets/Project-Image/Health-Intel.png"
+    },
+    {
+        id: "pragati-ai",
+        title: "PRAGATI AI",
+        slug: "pragati-ai",
+        description: "Next-generation learning ecosystem that breaks traditional 'study first, apply later' models by enabling students to learn, apply, research, and innovate simultaneously. Features AI-driven curriculum, personalized assessments, and built-in Research Assistant for real-world problem solving.",
+        shortDescription: "Revolutionary learning ecosystem with AI-driven curriculum and research integration.",
+        client: "Educational Institutions",
+        status: "done",
+        category: "fundamental",
+        featured: true,
+        completionDate: "Completed 2024",
+        problem: "Traditional education models are rigid and don't prepare students for real-world application and innovation.",
+        solution: "Developed flexible AI-driven learning platform with integrated research capabilities and personalized pacing.",
+        technologies: ["AI Curriculum", "Personalized Learning", "Research Integration", "Assessment Analytics", "Educational AI"],
+        features: [
+            "Flexible degree completion (1.5-4 years)",
+            "AI-driven curriculum adaptation",
+            "Personalized assessments",
+            "Built-in Research Assistant",
+            "Real-world problem identification",
+            "Skill-based checkpoints",
+            "Innovation tracking"
+        ],
+        results: [
+            "Personalized learning experiences",
+            "Real-world application focus",
+            "Research contribution tracking",
+            "Flexible academic pathways"
+        ],
+        mainImage: "/assets/Project-Image/Pragati.png"
+    },
+    {
+        id: "study-abroad-ai",
+        title: "Study Abroad AI",
+        slug: "study-abroad-ai",
+        description: "Intelligent platform transforming international admissions with personalized university matching, AI-enhanced SOP generation, CV building, LOR support, and comprehensive scholarship finder for global education access.",
+        shortDescription: "AI-powered platform for international education guidance and application support.",
+        client: "International Students",
+        status: "done",
+        category: "fundamental",
+        featured: true,
+        completionDate: "Completed 2024",
+        problem: "Students face overwhelming choices and lack guidance for international education applications.",
+        solution: "Developed comprehensive AI platform for personalized university matching and application assistance.",
+        technologies: ["AI Matching", "Natural Language Processing", "Educational Guidance", "Application Automation", "Scholarship Intelligence"],
+        features: [
+            "Personalized university matching",
+            "AI-enhanced SOP generation",
+            "Professional CV/Resume builder",
+            "LOR support system",
+            "Scholarship finder",
+            "Application guidance",
+            "Profile optimization"
+        ],
+        results: [
+            "Improved admission success rates",
+            "Streamlined application process",
+            "Better university matches",
+            "Enhanced application quality"
+        ],
+        mainImage: "/assets/Project-Image/Study-Abroad.png"
+    },
     // Incremental Projects
     {
         id: "ai-sales-crm-fuel-ai",
@@ -537,7 +630,7 @@ export const projects = [
             "Streamlined sales processes",
             "Scalable customer engagement"
         ],
-        mainImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center"
+        mainImage: "/assets/Project-Image/Fuel-AI.png"
     },
     {
         id: "travel-app-fly-nepal",
@@ -688,7 +781,7 @@ export const projects = [
             "Better customer engagement",
             "Scalable business growth"
         ],
-        mainImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop&crop=center"
+        mainImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=center"
     },
     {
         id: "digital-sop-management",
@@ -718,7 +811,7 @@ export const projects = [
             "Better compliance adherence",
             "Enhanced quality control"
         ],
-        mainImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=center"
+        mainImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop&crop=center"
     },
     {
         id: "intelligent-erp-system",
@@ -749,7 +842,7 @@ export const projects = [
             "Sustainable growth enablement",
             "Better decision-making"
         ],
-        mainImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=center"
+        mainImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&crop=center"
     },
     {
         id: "mediguru",
@@ -809,7 +902,7 @@ export const projects = [
             "Operational efficiency",
             "Business growth support"
         ],
-        mainImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=center"
+        mainImage: "https://images.unsplash.com/photo-1534723452862-4c874018d66d?w=800&h=600&fit=crop&crop=center"
     }
 ];
 

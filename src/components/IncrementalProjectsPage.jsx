@@ -3,7 +3,7 @@ import Heading from "./Heading";
 import Section from "./Section";
 import Tagline from "./Tagline";
 import Button from "./Button";
-import { check2, grid, loading1 } from "@/assets";
+import { grid } from "@/assets";
 import { Gradient } from "./design/Roadmap";
 import AnimatedSection from "./AnimatedSection";
 // Removed Sanity import
@@ -58,13 +58,6 @@ const IncrementalProjectsPage = ({ projects = [] }) => {
           <>
             <div className="relative grid gap-6 md:grid-cols-2 md:gap-4 md:pb-[7rem]">
               {projects.map((project, index) => {
-                const status =
-                  project.status === "done"
-                    ? "Completed"
-                    : project.status === "progress"
-                      ? "In Progress"
-                      : "Planning";
-
                 return (
                   <Link
                     href={`/projects/incremental/${project.slug}`}
@@ -72,7 +65,7 @@ const IncrementalProjectsPage = ({ projects = [] }) => {
                     key={project.id}
                   >
                     <div className="p-0.25 rounded-[2.5rem] bg-n-6 group-hover:bg-conic-gradient transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
-                      <div className="relative p-6 bg-n-8 rounded-[2.4375rem] overflow-hidden xl:p-8 h-full group-hover:bg-n-7 transition-all duration-300">
+                      <div className="relative bg-n-8 rounded-[2.4375rem] overflow-hidden h-full group-hover:bg-n-7 transition-all duration-300">
                         <div className="absolute top-0 left-0 max-w-full opacity-50">
                           <img
                             className="w-full"
@@ -82,36 +75,20 @@ const IncrementalProjectsPage = ({ projects = [] }) => {
                             alt="Grid"
                           />
                         </div>
-                        <div className="relative z-1">
+                        <div className="overflow-hidden rounded-t-[2.4375rem] relative z-1">
+                          <img
+                            className="w-full group-hover:scale-110 transition-transform duration-300"
+                            src={project.mainImage}
+                            width={400}
+                            height={250}
+                            alt={project.title}
+                          />
+                        </div>
+                        <div className="relative z-1 p-6 xl:p-8">
                           <div className="flex items-center justify-between mb-6 md:mb-8">
                             <Tagline>
                               {project.completionDate || project.client}
                             </Tagline>
-
-                            <div className="flex items-center px-3 py-1 bg-n-1 rounded text-n-8">
-                              <img
-                                className="mr-2"
-                                src={
-                                  project.status === "done" ? check2 : loading1
-                                }
-                                width={14}
-                                height={14}
-                                alt={status}
-                              />
-                              <div className="text-xs font-semibold">
-                                {status}
-                              </div>
-                            </div>
-                          </div>
-
-                          <div className="mb-6 -mx-6 xl:-mx-8 overflow-hidden rounded-lg">
-                            <img
-                              className="w-full rounded-lg group-hover:scale-110 transition-transform duration-300"
-                              src={project.mainImage}
-                              width={400}
-                              height={250}
-                              alt={project.title}
-                            />
                           </div>
                           <h4 className="h5 mb-3 group-hover:text-color-1 transition-colors duration-300">
                             {project.title}

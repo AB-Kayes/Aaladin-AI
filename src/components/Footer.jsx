@@ -57,7 +57,7 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <h6 className="h6 mb-4 text-n-1">Business Hours</h6>
             <div className="space-y-2">
-              <p className="body-2 text-n-4">Mon-Fri:</p>
+              <p className="body-2 text-n-4">Sun - Thu</p>
               <p className="body-2 text-n-4">9:00 AM - 6:00 PM PST</p>
             </div>
           </div>

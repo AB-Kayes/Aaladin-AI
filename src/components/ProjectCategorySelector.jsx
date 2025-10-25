@@ -49,11 +49,11 @@ const ProjectCategorySelector = () => {
           {categories.map((category, index) => (
             <Link
               href={category.href}
-              className={`block group cursor-pointer md:flex even:md:translate-y-[7rem]`}
+              className={`block group cursor-pointer md:flex even:md:translate-y-[7rem] hover:drop-shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all duration-300`}
               key={category.id}
             >
-              <div className="p-0.25 rounded-[2.5rem] bg-n-6 group-hover:bg-conic-gradient transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
-                <div className="relative p-6 bg-n-8 rounded-[2.4375rem] overflow-hidden xl:p-8 h-full group-hover:bg-n-7 transition-all duration-300">
+              <div className="p-0.5 rounded-[2.5rem] bg-gradient-to-r from-color-1/20 via-color-2/20 to-color-3/20 group-hover:from-color-1/40 group-hover:via-color-2/40 group-hover:to-color-3/40 group-hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] group-hover:shadow-color-1/20 transition-all duration-500 group-hover:scale-105">
+                <div className="relative bg-n-8 rounded-[2.375rem] overflow-hidden h-full group-hover:bg-n-7 transition-all duration-300">
                   <div className="absolute top-0 left-0 max-w-full opacity-50">
                     <img
                       className="w-full"
@@ -63,13 +63,26 @@ const ProjectCategorySelector = () => {
                       alt="Grid"
                     />
                   </div>
-                  <div className="relative z-1">
+                  <div className="overflow-hidden rounded-t-[2.375rem] relative z-1">
+                    <img
+                      className="w-full group-hover:scale-110 transition-transform duration-300"
+                      src={
+                        category.id === "fundamental"
+                          ? "/assets/Project-Image/Fundamental.jpg"
+                          : "/assets/Project-Image/Incremental.jpeg"
+                      }
+                      width={400}
+                      height={250}
+                      alt={`${category.title} background`}
+                    />
+                  </div>
+                  <div className="relative z-1 p-6 xl:p-8">
                     <div className="flex items-center justify-between mb-6 md:mb-8">
                       <Tagline>
                         {category.icon} {category.title}
                       </Tagline>
 
-                      <div className="flex items-center px-3 py-1 bg-n-1 rounded text-n-8">
+                      <div className="flex items-center px-3 py-1 bg-gradient-to-r from-color-1 to-color-2 rounded-full text-n-8 group-hover:shadow-lg group-hover:shadow-color-1/25 transition-all duration-300">
                         <img
                           className="mr-2"
                           src={check2}
@@ -97,9 +110,9 @@ const ProjectCategorySelector = () => {
                         {category.features.map((feature, idx) => (
                           <li
                             key={idx}
-                            className="text-xs text-n-4 flex items-center"
+                            className="text-xs text-n-4 flex items-center group-hover:text-n-3 transition-colors duration-300"
                           >
-                            <span className="w-1.5 h-1.5 bg-color-1 rounded-full mr-2"></span>
+                            <span className="w-1.5 h-1.5 bg-gradient-to-r from-color-1 to-color-2 rounded-full mr-2 group-hover:shadow-sm group-hover:shadow-color-1/50 transition-all duration-300"></span>
                             {feature}
                           </li>
                         ))}

@@ -31,11 +31,11 @@ const App = () => {
         {/* <AnimatedSection direction="up" delay={0.2}>
           <ServicesSection />
         </AnimatedSection> */}
-        <AnimatedSection direction="left" delay={0.1}>
-          <ProcessSection />
-        </AnimatedSection>
         <AnimatedSection direction="up" delay={0.2}>
           <ProjectsSection projects={projects} />
+        </AnimatedSection>
+        <AnimatedSection direction="left" delay={0.1}>
+          <ProcessSection />
         </AnimatedSection>
         {/* <AnimatedSection direction="right" delay={0.1}>
           <TestimonialSection testimonials={[]} />

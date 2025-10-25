@@ -72,7 +72,7 @@ const Hero = () => {
                 />
 
                 {/* Text Overlay */}
-                <TextOverlay className="hidden lg:flex" />
+                <TextOverlay className="lg:flex" />
 
                 {/* <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" /> */}
                 <div>
@@ -121,7 +121,6 @@ const Hero = () => {
               </div>
             </div>
 
-            <Gradient />
           </div>
           <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
             <img
