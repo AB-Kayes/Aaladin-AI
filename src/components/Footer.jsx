@@ -28,18 +28,10 @@ const Footer = () => {
             <div className="space-y-2">
               <p className="body-2 text-n-4">
                 <a
-                  href="tel:+8801798777566"
+                  href="tel:+8801798043626"
                   className="hover:text-n-1 transition-colors"
                 >
-                  +880-01798777566
-                </a>
-              </p>
-              <p className="body-2 text-n-4">
-                <a
-                  href="tel:+8801875490002"
-                  className="hover:text-n-1 transition-colors"
-                >
-                  +880 1875-490002
+                  +880-01798043626
                 </a>
               </p>
               <p className="body-2 text-n-4">

@@ -56,7 +56,7 @@ const IncrementalProjectsPage = ({ projects = [] }) => {
           </div>
         ) : (
           <>
-            <div className="relative grid gap-6 md:grid-cols-2 md:gap-4 md:pb-[7rem]">
+            <div className="relative grid gap-12 md:grid-cols-2 md:gap-10 md:pb-[7rem]">
               {projects.map((project, index) => {
                 return (
                   <Link

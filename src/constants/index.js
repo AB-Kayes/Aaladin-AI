@@ -69,11 +69,11 @@ export const navigation = [
   //   title: "Testimonials",
   //   url: "/#testimonials",
   // },
-  {
-    id: "6",
-    title: "Blog",
-    url: "/blog",
-  },
+  // {
+  //   id: "6",
+  //   title: "Blog",
+  //   url: "/blog",
+  // },
   {
     id: "7",
     title: "Newsletter",

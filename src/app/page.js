@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import ResponsiveHeader from "@/components/ResponsiveHeader";
 import ButtonGradient from "@/components/svg/ButtonGradient";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
@@ -24,7 +24,7 @@ const App = () => {
   return (
     <>
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-        <Header />
+        <ResponsiveHeader />
         <AnimatedSection direction="fade" duration={0.8}>
           <Hero />
         </AnimatedSection>

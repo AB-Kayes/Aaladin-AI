@@ -85,7 +85,7 @@ const CompanyLogos = () => {
               {Logos.map((logo, index) => (
                 <div
                   key={`${logo.name}-${index}`}
-                  className="flex items-center justify-center h-24 w-48 transition-all duration-300 hover:scale-105 group"
+                  className="flex items-center justify-center h-16 w-32 sm:h-20 sm:w-40 md:h-24 md:w-48 transition-all duration-300 hover:scale-105 group"
                 >
                   <Image
                     src={logo.src}
@@ -97,8 +97,8 @@ const CompanyLogos = () => {
                     opacity-60 group-hover:opacity-90 group-hover:grayscale
                     dark:brightness-0 dark:invert dark:opacity-70 dark:group-hover:opacity-95`}
                     style={{
-                      minWidth: "120px",
-                      minHeight: "60px",
+                      minWidth: "80px",
+                      minHeight: "40px",
                       ...(logo.grayscaleIntensity !== undefined && {
                         filter: `grayscale(${Math.min(logo.grayscaleIntensity + 20, 100)}%)`,
                       }),
