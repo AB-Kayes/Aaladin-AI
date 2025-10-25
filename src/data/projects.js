@@ -27,7 +27,7 @@ export const projects = [
             "Centralized digital archives",
             "Enhanced information retrieval"
         ],
-        mainImage: "/assets/roadmap/image-1.png"
+        mainImage: "/assets/Project-Image/Aaladin-OCR-Engine.png"
     },
     {
         id: "proprietary-small-language-model",
@@ -55,7 +55,7 @@ export const projects = [
             "3x faster inference speeds",
             "Domain-specific accuracy improvements"
         ],
-        mainImage: "/assets/roadmap/image-2.png"
+        mainImage: "/assets/Project-Image/Small-language-model.png"
     },
     {
         id: "vision-language-model",
@@ -85,7 +85,7 @@ export const projects = [
             "Enhanced content moderation",
             "Improved data extraction accuracy"
         ],
-        mainImage: "/assets/roadmap/image-3.png"
+        mainImage: "/assets/Project-Image/Vision-Language-Model.png"
     },
     {
         id: "bangla-voice-ai",
@@ -115,7 +115,7 @@ export const projects = [
             "24/7 customer support availability",
             "New revenue channels"
         ],
-        mainImage: "/assets/roadmap/image-4.png"
+        mainImage: "/assets/Project-Image/Bangla-Voice-AI.png"
     },
     {
         id: "accounts-ai",
@@ -146,7 +146,7 @@ export const projects = [
             "80% faster reporting",
             "Improved fraud detection"
         ],
-        mainImage: "/assets/roadmap/image-1.png"
+        mainImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop&crop=center"
     },
     {
         id: "trackio-transportation",
@@ -176,7 +176,7 @@ export const projects = [
             "Reduced fuel consumption",
             "Better urban mobility planning"
         ],
-        mainImage: "/assets/roadmap/image-2.png"
+        mainImage: "/assets/Project-Image/Track-io.png"
     },
     {
         id: "the-third-eye-bi",
@@ -206,7 +206,7 @@ export const projects = [
             "Improved departmental alignment",
             "Data-driven growth strategies"
         ],
-        mainImage: "/assets/roadmap/image-3.png"
+        mainImage: "/assets/Project-Image/The-Third-Eye.png"
     },
     {
         id: "aaladin-crm",
@@ -236,7 +236,7 @@ export const projects = [
             "Reduced manual follow-up work",
             "Better customer insights"
         ],
-        mainImage: "/assets/roadmap/image-4.png"
+        mainImage: "/assets/Project-Image/Aaladin-CRM.png"
     },
     {
         id: "project-manager-ai",
@@ -266,7 +266,7 @@ export const projects = [
             "Proactive risk management",
             "Enhanced team productivity"
         ],
-        mainImage: "/assets/roadmap/image-1.png"
+        mainImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&crop=center"
     },
     {
         id: "health-ai",
@@ -296,7 +296,7 @@ export const projects = [
             "Faster clinical workflows",
             "Improved patient care"
         ],
-        mainImage: "/assets/roadmap/image-2.png"
+        mainImage: "/assets/Project-Image/Health-AI.png"
     },
     {
         id: "ai-fabricator",
@@ -326,7 +326,7 @@ export const projects = [
             "Reduced technical dependencies",
             "Increased innovation capacity"
         ],
-        mainImage: "/assets/roadmap/image-3.png"
+        mainImage: "/assets/Project-Image/AI-Fabricator.png"
     },
     {
         id: "englishmate",
@@ -356,7 +356,7 @@ export const projects = [
             "Accessible language learning",
             "Scalable education solution"
         ],
-        mainImage: "/assets/roadmap/image-4.png"
+        mainImage: "/assets/Project-Image/English-mate.png"
     },
     {
         id: "monitor-ai",
@@ -386,7 +386,7 @@ export const projects = [
             "Enhanced parent involvement",
             "More accountable learning environment"
         ],
-        mainImage: "/assets/roadmap/image-1.png"
+        mainImage: "/assets/Project-Image/Monitor-AI.webp"
     },
     {
         id: "flood-shield",
@@ -416,7 +416,7 @@ export const projects = [
             "Community safety enhancement",
             "Better resource allocation"
         ],
-        mainImage: "/assets/roadmap/image-2.png"
+        mainImage: "/assets/Project-Image/Flood-Shield.png"
     },
     {
         id: "site-genie",
@@ -446,7 +446,7 @@ export const projects = [
             "Faster business establishment",
             "Cost-effective web presence"
         ],
-        mainImage: "/assets/roadmap/image-3.png"
+        mainImage: "/assets/Project-Image/Site-Genie.png"
     },
     {
         id: "justice-ai",
@@ -476,7 +476,7 @@ export const projects = [
             "Faster help connections",
             "Empowered action taking"
         ],
-        mainImage: "/assets/roadmap/image-4.png"
+        mainImage: "/assets/Project-Image/Justice-AI.png"
     },
     {
         id: "halalgpt",
@@ -506,7 +506,7 @@ export const projects = [
             "Global community service",
             "Trusted resource establishment"
         ],
-        mainImage: "/assets/roadmap/image-1.png"
+        mainImage: "/assets/Project-Image/Halal-GPT.webp"
     },
     // Incremental Projects
     {
@@ -537,7 +537,7 @@ export const projects = [
             "Streamlined sales processes",
             "Scalable customer engagement"
         ],
-        mainImage: "/assets/roadmap/image-2.png"
+        mainImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center"
     },
     {
         id: "travel-app-fly-nepal",
@@ -567,7 +567,7 @@ export const projects = [
             "Enhanced customer accessibility",
             "Improved booking experience"
         ],
-        mainImage: "/assets/roadmap/image-3.png"
+        mainImage: "/assets/Project-Image/FlyNepal.png"
     },
     {
         id: "ai-business-launchpad",
@@ -598,7 +598,7 @@ export const projects = [
             "Accelerated go-to-market",
             "Comprehensive launch preparation"
         ],
-        mainImage: "/assets/roadmap/image-4.png"
+        mainImage: "/assets/Project-Image/Scale-Build-AI.jpg"
     },
     {
         id: "productivity-ai-linage",
@@ -628,7 +628,7 @@ export const projects = [
             "Faster design creation",
             "Better collaboration"
         ],
-        mainImage: "/assets/roadmap/image-1.png"
+        mainImage: "/assets/Project-Image/Linage.png"
     },
     {
         id: "city-pass",
@@ -658,7 +658,7 @@ export const projects = [
             "Improved accessibility",
             "Streamlined transportation"
         ],
-        mainImage: "/assets/roadmap/image-2.png"
+        mainImage: "/assets/Project-Image/City-Pass.png"
     },
     {
         id: "enterprise-business-systems",
@@ -688,7 +688,7 @@ export const projects = [
             "Better customer engagement",
             "Scalable business growth"
         ],
-        mainImage: "/assets/roadmap/image-3.png"
+        mainImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop&crop=center"
     },
     {
         id: "digital-sop-management",
@@ -718,7 +718,7 @@ export const projects = [
             "Better compliance adherence",
             "Enhanced quality control"
         ],
-        mainImage: "/assets/roadmap/image-4.png"
+        mainImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=center"
     },
     {
         id: "intelligent-erp-system",
@@ -749,7 +749,7 @@ export const projects = [
             "Sustainable growth enablement",
             "Better decision-making"
         ],
-        mainImage: "/assets/roadmap/image-1.png"
+        mainImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=center"
     },
     {
         id: "mediguru",
@@ -779,7 +779,7 @@ export const projects = [
             "Better preparation efficiency",
             "Comprehensive study resources"
         ],
-        mainImage: "/assets/roadmap/image-2.png"
+        mainImage: "/assets/Project-Image/MediGuru.png"
     },
     {
         id: "purepic",
@@ -809,7 +809,7 @@ export const projects = [
             "Operational efficiency",
             "Business growth support"
         ],
-        mainImage: "/assets/roadmap/image-3.png"
+        mainImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=center"
     }
 ];
 

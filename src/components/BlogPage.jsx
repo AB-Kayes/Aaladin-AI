@@ -44,7 +44,7 @@ const BlogPage = ({ posts = [] }) => {
                     We're working on some amazing content for you. Check back
                     soon for our latest insights and stories.
                   </p>
-                  <Button href="/#contact">Get notified when we publish</Button>
+                  <Button href="/contact">Get notified when we publish</Button>
                 </div>
               </div>
             </div>
@@ -215,7 +215,7 @@ const BlogPage = ({ posts = [] }) => {
           <p className="body-2 text-n-4 mb-6">
             Want to stay updated with our latest insights and stories?
           </p>
-          <Button href="/#contact">Subscribe to our newsletter</Button>
+          <Button href="/contact">Subscribe to our newsletter</Button>
         </div>
       </div>
     </Section>

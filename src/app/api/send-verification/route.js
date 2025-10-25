@@ -58,6 +58,3 @@ export async function POST(request) {
     );
   }
 }
-
-// Export the verification store for use in other routes
-export { verificationStore };

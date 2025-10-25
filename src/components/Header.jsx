@@ -36,11 +36,14 @@ const Header = () => {
     setOpenNavigation(false);
   };
 
-  // Close dropdown when clicking outside
+  // Close dropdown when clicking outside (only on mobile)
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setOpenProjectsDropdown(false);
+        // Only close on mobile devices or when explicitly clicking outside
+        if (window.innerWidth < 1024) {
+          setOpenProjectsDropdown(false);
+        }
       }
     };
 
@@ -84,11 +87,10 @@ const Header = () => {
                       key={item.id}
                       className="relative group"
                       ref={dropdownRef}
+                      onMouseEnter={() => setOpenProjectsDropdown(true)}
+                      onMouseLeave={() => setOpenProjectsDropdown(false)}
                     >
                       <button
-                        onClick={() =>
-                          setOpenProjectsDropdown(!openProjectsDropdown)
-                        }
                         className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
                           item.onlyMobile ? "lg:hidden" : ""
                         } px-6 py-6 md:py-4 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
@@ -99,7 +101,9 @@ const Header = () => {
                       >
                         {item.title}
                         <svg
-                          className="w-4 h-4 ml-1 transition-transform group-hover:rotate-180"
+                          className={`w-4 h-4 ml-1 transition-transform ${
+                            openProjectsDropdown ? "rotate-180" : ""
+                          }`}
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -119,10 +123,7 @@ const Header = () => {
                           <div className="p-2">
                             <Link
                               href="/projects/fundamental"
-                              onClick={() => {
-                                setOpenProjectsDropdown(false);
-                                handleClick();
-                              }}
+                              onClick={handleClick}
                               className="block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 px-6 py-6 md:py-4 lg:-mr-0.25 lg:text-xs lg:font-semibold lg:leading-5 lg:hover:text-n-1 xl:px-4 hover:bg-n-7 rounded-lg"
                             >
                               Fundamental Projects
@@ -130,10 +131,7 @@ const Header = () => {
 
                             <Link
                               href="/projects/incremental"
-                              onClick={() => {
-                                setOpenProjectsDropdown(false);
-                                handleClick();
-                              }}
+                              onClick={handleClick}
                               className="block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 px-6 py-6 md:py-4 lg:-mr-0.25 lg:text-xs lg:font-semibold lg:leading-5 lg:hover:text-n-1 xl:px-4 hover:bg-n-7 rounded-lg"
                             >
                               Incremental Projects

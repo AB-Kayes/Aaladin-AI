@@ -114,8 +114,7 @@ const ProcessSection = () => {
             <div className="relative z-1 max-w-[17rem] ml-auto">
               <h4 className="h4 mb-4">Our approach</h4>
               <p className="body-2 mb-[3rem] text-n-3">
-                We combine product strategy, ML research and software
-                engineering to deliver measurable outcomes.
+                We combine strategic insight, AI research, and agile engineering to deliver measurable impact.
               </p>
               <ul className="body-2">
                 {aaladinServices.map((item, index) => (

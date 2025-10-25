@@ -346,7 +346,7 @@ const BlogDetailsPage = ({ post, relatedPosts = [] }) => {
               delivered to your inbox.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/#contact">
+              <Link href="/contact">
                 <Button>Subscribe Now</Button>
               </Link>
               <Link href="/blog">

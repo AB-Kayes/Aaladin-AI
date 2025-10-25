@@ -10,6 +10,7 @@ import { useRef } from "react";
 import Generating from "./Generating";
 import Notification from "./Notification";
 import CompanyLogos from "./CompanyLogos";
+import TextOverlay from "./TextOverlay";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -61,58 +62,61 @@ const Hero = () => {
             <div className="relative bg-n-8 rounded-[1rem]">
               {/* <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" /> */}
 
-              <div className="aspect-[33/40] rounded-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
+              <div className="aspect-[33/40] rounded-[0.9rem] md:aspect-[688/490] lg:aspect-[1024/490] relative">
                 <img
                   src={robot}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-[0.9rem]"
                   width={1024}
                   height={490}
                   alt="AI"
                 />
 
+                {/* Text Overlay */}
+                <TextOverlay className="hidden lg:flex" />
+
                 {/* <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" /> */}
                 <div>
-                <ScrollParallax isAbsolutelyPositioned>
-                  <Notification
-                    className="hidden absolute -right-20 top-10 xl:flex"
-                    title="Code generation"
-                  />
-                </ScrollParallax>
+                  <ScrollParallax isAbsolutelyPositioned>
+                    <Notification
+                      className="hidden absolute -right-20 top-10 xl:flex z-20"
+                      title="Code generation"
+                    />
+                  </ScrollParallax>
 
-                <ScrollParallax isAbsolutelyPositioned>
-                  <Notification
-                    className="hidden absolute -left-20 top-10 xl:flex"
-                    title="AI Model Training"
-                  />
-                </ScrollParallax>
+                  <ScrollParallax isAbsolutelyPositioned>
+                    <Notification
+                      className="hidden absolute -left-20 top-10 xl:flex z-20"
+                      title="AI Model Training"
+                    />
+                  </ScrollParallax>
 
-                <ScrollParallax isAbsolutelyPositioned>
-                  <Notification
-                    className="hidden absolute -right-40 top-48 xl:flex"
-                    title="Data Processing"
-                  />
-                </ScrollParallax>
+                  <ScrollParallax isAbsolutelyPositioned>
+                    <Notification
+                      className="hidden absolute -right-40 top-48 xl:flex z-20"
+                      title="Data Processing"
+                    />
+                  </ScrollParallax>
 
-                <ScrollParallax isAbsolutelyPositioned>
-                  <Notification
-                    className="hidden absolute -left-40 top-48 xl:flex"
-                    title="API Integration"
-                  />
-                </ScrollParallax>
+                  <ScrollParallax isAbsolutelyPositioned>
+                    <Notification
+                      className="hidden absolute -left-40 top-48 xl:flex z-20"
+                      title="API Integration"
+                    />
+                  </ScrollParallax>
 
-                <ScrollParallax isAbsolutelyPositioned>
-                  <Notification
-                    className="hidden absolute -right-20 top-[22rem] xl:flex"
-                    title="Neural Networks"
-                  />
-                </ScrollParallax>
+                  <ScrollParallax isAbsolutelyPositioned>
+                    <Notification
+                      className="hidden absolute -right-20 top-[22rem] xl:flex z-20"
+                      title="Neural Networks"
+                    />
+                  </ScrollParallax>
 
-                <ScrollParallax isAbsolutelyPositioned>
-                  <Notification
-                    className="hidden absolute -left-20 top-[22rem] xl:flex"
-                    title="Cloud Deployment"
-                  />
-                </ScrollParallax>
+                  <ScrollParallax isAbsolutelyPositioned>
+                    <Notification
+                      className="hidden absolute -left-20 top-[22rem] xl:flex z-20"
+                      title="Cloud Deployment"
+                    />
+                  </ScrollParallax>
                 </div>
               </div>
             </div>

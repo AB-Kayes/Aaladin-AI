@@ -321,7 +321,7 @@ const ProjectDetailsPage = ({ project, relatedProjects = [] }) => {
             </div>
 
             {/* Technologies & Features */}
-            <div className="space-y-8">
+            <div className="space-y-8 lg:pt-16">
               {project.technologies && project.technologies.length > 0 && (
                 <div className="relative bg-n-8 border border-n-1/10 rounded-3xl p-8">
                   <h3 className="h4 mb-6">Technologies Used</h3>
@@ -418,7 +418,7 @@ const ProjectDetailsPage = ({ project, relatedProjects = [] }) => {
               business.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/#contact">
+              <Link href="/contact">
                 <Button>Get a Quote</Button>
               </Link>
               <Link

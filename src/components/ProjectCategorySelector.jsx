@@ -47,71 +47,68 @@ const ProjectCategorySelector = () => {
 
         <div className="relative grid gap-6 md:grid-cols-2 md:gap-4 md:pb-[7rem]">
           {categories.map((category, index) => (
-            <AnimatedSection
+            <Link
+              href={category.href}
+              className={`block group cursor-pointer md:flex even:md:translate-y-[7rem]`}
               key={category.id}
-              direction="scale"
-              delay={index * 0.2}
-              className="md:flex"
             >
-              <Link href={category.href} className="block group cursor-pointer">
-                <div className="p-0.25 rounded-[2.5rem] bg-n-6 group-hover:bg-conic-gradient transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
-                  <div className="relative p-6 bg-n-8 rounded-[2.4375rem] overflow-hidden xl:p-8 h-full group-hover:bg-n-7 transition-all duration-300">
-                    <div className="absolute top-0 left-0 max-w-full opacity-50">
-                      <img
-                        className="w-full"
-                        src={grid}
-                        width={550}
-                        height={550}
-                        alt="Grid"
-                      />
+              <div className="p-0.25 rounded-[2.5rem] bg-n-6 group-hover:bg-conic-gradient transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl">
+                <div className="relative p-6 bg-n-8 rounded-[2.4375rem] overflow-hidden xl:p-8 h-full group-hover:bg-n-7 transition-all duration-300">
+                  <div className="absolute top-0 left-0 max-w-full opacity-50">
+                    <img
+                      className="w-full"
+                      src={grid}
+                      width={550}
+                      height={550}
+                      alt="Grid"
+                    />
+                  </div>
+                  <div className="relative z-1">
+                    <div className="flex items-center justify-between mb-6 md:mb-8">
+                      <Tagline>
+                        {category.icon} {category.title}
+                      </Tagline>
+
+                      <div className="flex items-center px-3 py-1 bg-n-1 rounded text-n-8">
+                        <img
+                          className="mr-2"
+                          src={check2}
+                          width={14}
+                          height={14}
+                          alt="Available"
+                        />
+                        <div className="text-xs font-semibold">Available</div>
+                      </div>
                     </div>
-                    <div className="relative z-1">
-                      <div className="flex items-center justify-between mb-6 md:mb-8">
-                        <Tagline>
-                          {category.icon} {category.title}
-                        </Tagline>
 
-                        <div className="flex items-center px-3 py-1 bg-n-1 rounded text-n-8">
-                          <img
-                            className="mr-2"
-                            src={check2}
-                            width={14}
-                            height={14}
-                            alt="Available"
-                          />
-                          <div className="text-xs font-semibold">Available</div>
-                        </div>
-                      </div>
+                    <h4 className="h5 mb-3 group-hover:text-color-1 transition-colors duration-300">
+                      {category.title}
+                    </h4>
 
-                      <h4 className="h5 mb-3 group-hover:text-color-1 transition-colors duration-300">
-                        {category.title}
-                      </h4>
+                    <p className="body-2 text-n-4 text-sm leading-relaxed group-hover:text-n-3 transition-colors duration-300 mb-4">
+                      {category.description}
+                    </p>
 
-                      <p className="body-2 text-n-4 text-sm leading-relaxed group-hover:text-n-3 transition-colors duration-300 mb-4">
-                        {category.description}
-                      </p>
-
-                      <div className="space-y-2">
-                        <h5 className="text-sm font-semibold text-n-2 mb-2">
-                          Key Features:
-                        </h5>
-                        <ul className="space-y-1">
-                          {category.features.map((feature, idx) => (
-                            <li
-                              key={idx}
-                              className="text-xs text-n-4 flex items-center"
-                            >
-                              <span className="w-1.5 h-1.5 bg-color-1 rounded-full mr-2"></span>
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                    <div className="space-y-2">
+                      <h5 className="text-sm font-semibold text-n-2 mb-2">
+                        Key Features:
+                      </h5>
+                      <ul className="space-y-1">
+                        {category.features.map((feature, idx) => (
+                          <li
+                            key={idx}
+                            className="text-xs text-n-4 flex items-center"
+                          >
+                            <span className="w-1.5 h-1.5 bg-color-1 rounded-full mr-2"></span>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
-              </Link>
-            </AnimatedSection>
+              </div>
+            </Link>
           ))}
 
           <Gradient />

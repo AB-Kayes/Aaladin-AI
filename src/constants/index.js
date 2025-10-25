@@ -74,6 +74,11 @@ export const navigation = [
     title: "Blog",
     url: "/blog",
   },
+  {
+    id: "7",
+    title: "Newsletter",
+    url: "/newsletter",
+  },
   // {
   //   id: "8",
   //   title: "Our Universe",
@@ -89,7 +94,7 @@ export const companyLogos = [yourlogo, yourlogo, yourlogo, yourlogo, yourlogo];
 
 export const aaladinServices = [
   "Product strategy & discovery",
-  "Custom AI development",
+  "Collaborative Solution Design",
   "Integration & deployment",
 ];
 
@@ -488,18 +493,18 @@ export const collabText =
 export const collabContent = [
   {
     id: "0",
-    title: "Agile Development",
-    text: "Iterative development cycles with regular client feedback and continuous delivery for faster time-to-market.",
+    title: "Product Strategy & Discovery",
+    text: "We identify challenges, define goals, and create clear, data-driven roadmaps.",
   },
   {
     id: "1",
-    title: "Modern Tech Stack",
-    text: "Latest frameworks and technologies including React, Node.js, AI/ML, and cloud-native solutions.",
+    title: "Collaborative Solution Design",
+    text: "We co-create intelligent solutions through adaptability, transparency, and continuous feedback.",
   },
   {
     id: "2",
-    title: "Quality Assurance",
-    text: "Comprehensive testing, code reviews, and security audits to ensure robust and reliable software.",
+    title: "Integration & Deployment",
+    text: "We integrate, optimize, and support your AI solution for lasting success.",
   },
 ];
 

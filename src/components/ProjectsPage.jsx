@@ -78,7 +78,7 @@ const ProjectsPage = () => (
         <p className="body-2 text-n-4 mb-6">
           Interested in working with us? Let's discuss your next project.
         </p>
-        <Button href="/#contact">Get in touch</Button>
+        <Button href="/contact">Get in touch</Button>
       </div>
     </div>
   </Section>
