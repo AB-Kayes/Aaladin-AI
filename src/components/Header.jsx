@@ -18,6 +18,7 @@ const Header = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
   const [openProjectsDropdown, setOpenProjectsDropdown] = useState(false);
   const dropdownRef = useRef(null);
+  const hoverTimeoutRef = useRef(null);
 
   const toggleNavigation = () => {
     if (openNavigation) {
@@ -34,6 +35,19 @@ const Header = () => {
 
     enablePageScroll();
     setOpenNavigation(false);
+  };
+
+  const handleMouseEnter = () => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+    setOpenProjectsDropdown(true);
+  };
+
+  const handleMouseLeave = () => {
+    hoverTimeoutRef.current = setTimeout(() => {
+      setOpenProjectsDropdown(false);
+    }, 150); // Small delay to prevent accidental closing
   };
 
   // Close dropdown when clicking outside (only on mobile)
@@ -55,6 +69,15 @@ const Header = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [openProjectsDropdown]);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div className="fixed top-5 z-50 w-full">
@@ -87,8 +110,8 @@ const Header = () => {
                       key={item.id}
                       className="relative group"
                       ref={dropdownRef}
-                      onMouseEnter={() => setOpenProjectsDropdown(true)}
-                      onMouseLeave={() => setOpenProjectsDropdown(false)}
+                      onMouseEnter={handleMouseEnter}
+                      onMouseLeave={handleMouseLeave}
                     >
                       <button
                         className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
@@ -119,25 +142,29 @@ const Header = () => {
 
                       {/* Dropdown Menu */}
                       {openProjectsDropdown && (
-                        <div className="absolute top-full left-0 mt-2 w-64 bg-n-8 border border-n-6 rounded-xl shadow-xl z-50">
-                          <div className="p-2">
-                            <Link
-                              href="/projects/fundamental"
-                              onClick={handleClick}
-                              className="block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 px-6 py-6 md:py-4 lg:-mr-0.25 lg:text-xs lg:font-semibold lg:leading-5 lg:hover:text-n-1 xl:px-4 hover:bg-n-7 rounded-lg"
-                            >
-                              Fundamental Projects
-                            </Link>
+                        <>
+                          {/* Invisible bridge to prevent gap issues */}
+                          <div className="absolute top-full left-0 right-0 h-2 bg-transparent z-40"></div>
+                          <div className="absolute top-full left-0 mt-2 w-64 bg-n-8 border border-n-6 rounded-xl shadow-xl z-50">
+                            <div className="p-2">
+                              <Link
+                                href="/projects/fundamental"
+                                onClick={handleClick}
+                                className="block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 px-6 py-6 md:py-4 lg:-mr-0.25 lg:text-xs lg:font-semibold lg:leading-5 lg:hover:text-n-1 xl:px-4 hover:bg-n-7 rounded-lg"
+                              >
+                                Fundamental Projects
+                              </Link>
 
-                            <Link
-                              href="/projects/incremental"
-                              onClick={handleClick}
-                              className="block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 px-6 py-6 md:py-4 lg:-mr-0.25 lg:text-xs lg:font-semibold lg:leading-5 lg:hover:text-n-1 xl:px-4 hover:bg-n-7 rounded-lg"
-                            >
-                              Incremental Projects
-                            </Link>
+                              <Link
+                                href="/projects/incremental"
+                                onClick={handleClick}
+                                className="block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 px-6 py-6 md:py-4 lg:-mr-0.25 lg:text-xs lg:font-semibold lg:leading-5 lg:hover:text-n-1 xl:px-4 hover:bg-n-7 rounded-lg"
+                              >
+                                Incremental Projects
+                              </Link>
+                            </div>
                           </div>
-                        </div>
+                        </>
                       )}
                     </div>
                   );

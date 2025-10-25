@@ -514,7 +514,7 @@ const Contact = () => {
                         <img src={check} width={20} height={20} alt="Email" />
                       </div>
                       <h6 className="h6 mb-2">Email Us</h6>
-                      <p className="body-2 text-n-4">hello@aaladin.ai</p>
+                      <p className="body-2 text-n-4">contact@aaladinai.com</p>
                     </div>
 
                     <div className="flex flex-col items-center">
