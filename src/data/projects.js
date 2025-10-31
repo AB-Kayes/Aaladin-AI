@@ -630,7 +630,7 @@ export const projects = [
             "Streamlined sales processes",
             "Scalable customer engagement"
         ],
-        mainImage: "/assets/Project-Image/Fuel-AI.png"
+        mainImage: "/assets/Project-Image/fuel-ai.jpg"
     },
     {
         id: "travel-app-fly-nepal",
@@ -660,7 +660,7 @@ export const projects = [
             "Enhanced customer accessibility",
             "Improved booking experience"
         ],
-        mainImage: "/assets/Project-Image/FlyNepal.png"
+        mainImage: "/assets/Project-Image/fly-nepal.jpg"
     },
     {
         id: "ai-business-launchpad",
@@ -668,7 +668,7 @@ export const projects = [
         slug: "ai-business-launchpad",
         description: "All-in-one entrepreneurial engine that transforms business ideas into ready-to-launch brands within minutes by leveraging multiple AI models for logos, names, pitch decks, websites, and marketing assets.",
         shortDescription: "AI platform for rapid business ideation to launch transformation.",
-        client: "Project Scale Built",
+        client: "Project ScaleBuild AI",
         status: "done",
         category: "incremental",
         featured: true,
@@ -691,7 +691,7 @@ export const projects = [
             "Accelerated go-to-market",
             "Comprehensive launch preparation"
         ],
-        mainImage: "/assets/Project-Image/Scale-Build-AI.jpg"
+        mainImage: "/assets/Project-Image/scale-build-ai.jpg"
     },
     {
         id: "productivity-ai-linage",
@@ -721,7 +721,7 @@ export const projects = [
             "Faster design creation",
             "Better collaboration"
         ],
-        mainImage: "/assets/Project-Image/Linage.png"
+        mainImage: "/assets/Project-Image/linage.jpg"
     },
     {
         id: "city-pass",
@@ -751,7 +751,7 @@ export const projects = [
             "Improved accessibility",
             "Streamlined transportation"
         ],
-        mainImage: "/assets/Project-Image/City-Pass.png"
+        mainImage: "/assets/Project-Image/city-pass.jpg"
     },
     {
         id: "enterprise-business-systems",

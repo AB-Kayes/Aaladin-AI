@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ButtonGradient from "@/components/svg/ButtonGradient";
 import IncrementalProjectsPage from "@/components/IncrementalProjectsPage";
@@ -15,11 +14,8 @@ const IncrementalProjects = () => {
 
     return (
         <>
-            <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-                <Header />
-                <IncrementalProjectsPage projects={projects} />
-                <Footer />
-            </div>
+            <IncrementalProjectsPage projects={projects} />
+            <Footer />
             <ButtonGradient />
         </>
     );

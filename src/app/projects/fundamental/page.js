@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ButtonGradient from "@/components/svg/ButtonGradient";
 import FundamentalProjectsPage from "@/components/FundamentalProjectsPage";
@@ -15,11 +14,8 @@ const FundamentalProjects = () => {
 
     return (
         <>
-            <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-                <Header />
-                <FundamentalProjectsPage projects={projects} />
-                <Footer />
-            </div>
+            <FundamentalProjectsPage projects={projects} />
+            <Footer />
             <ButtonGradient />
         </>
     );

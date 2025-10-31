@@ -1,5 +1,4 @@
 import BlogPage from "@/components/BlogPage";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getBlogPosts } from "@/lib/sanity";
 
@@ -14,11 +13,8 @@ export default async function Blog() {
 
   return (
     <>
-      <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-        <Header />
-        <BlogPage posts={posts} />
-        <Footer />
-      </div>
+      <BlogPage posts={posts} />
+      <Footer />
     </>
   );
 }

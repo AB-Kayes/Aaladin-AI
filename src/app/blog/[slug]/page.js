@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import BlogDetailsPage from "@/components/BlogDetailsPage";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getBlogPostBySlug, getBlogPosts } from "@/lib/sanity";
 
@@ -51,11 +50,8 @@ export default async function BlogPost({ params }) {
 
   return (
     <>
-      <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-        <Header />
-        <BlogDetailsPage post={post} relatedPosts={finalRelatedPosts} />
-        <Footer />
-      </div>
+      <BlogDetailsPage post={post} relatedPosts={finalRelatedPosts} />
+      <Footer />
     </>
   );
 }

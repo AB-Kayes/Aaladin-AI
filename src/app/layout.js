@@ -1,6 +1,7 @@
 import "./globals.css";
 import Starfield from "../components/Starfield";
 import { Toaster } from "sonner";
+import ResponsiveHeader from "@/components/ResponsiveHeader";
 
 export const metadata = {
   title: "Aaladin AI: Your Tech Genie - Granting Your Digital Wishes",
@@ -13,7 +14,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`antialiased text-white`}>
         {/* <Starfield /> */}
-        {children}
+        <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
+          <ResponsiveHeader />
+          {children}
+        </div>
         <Toaster position="top-right" theme="dark" richColors closeButton />
       </body>
     </html>

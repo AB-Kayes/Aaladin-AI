@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import Link from 'next/link'
-import { motion } from 'framer-motion'
+import Link from "next/link";
+import { motion } from "framer-motion";
 
-export default function Navbar(){
+export default function Navbar() {
   return (
     <motion.nav
       initial={{ y: -20, opacity: 0 }}
@@ -13,7 +13,9 @@ export default function Navbar(){
     >
       <div className="mx-6 my-3 flex items-center justify-between">
         <Link href="#" className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-primary/80 to-cyan-400 flex items-center justify-center text-white">💫</div>
+          <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-primary/80 to-cyan-400 flex items-center justify-center text-white">
+            💫
+          </div>
           <span className="font-orbitron text-lg">Aaladin AI</span>
         </Link>
         <div className="hidden sm:flex gap-6 items-center text-sm">
@@ -27,5 +29,5 @@ export default function Navbar(){
         </div>
       </div>
     </motion.nav>
-  )
+  );
 }

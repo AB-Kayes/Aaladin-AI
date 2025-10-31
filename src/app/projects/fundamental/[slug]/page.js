@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import ProjectDetailsPage from "@/components/ProjectDetailsPage";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ButtonGradient from "@/components/svg/ButtonGradient";
 import { getProjectBySlug, getFundamentalProjects } from "@/data/projects";
@@ -51,14 +50,11 @@ export default function ProjectDetails({ params }) {
 
   return (
     <>
-      <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
-        <Header />
-        <ProjectDetailsPage
-          project={project}
-          relatedProjects={finalRelatedProjects}
-        />
-        <Footer />
-      </div>
+      <ProjectDetailsPage
+        project={project}
+        relatedProjects={finalRelatedProjects}
+      />
+      <Footer />
       <ButtonGradient />
     </>
   );
