@@ -781,7 +781,7 @@ export const projects = [
             "Better customer engagement",
             "Scalable business growth"
         ],
-        mainImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=center"
+        mainImage: "/assets/Project-Image/EBS.jpg"
     },
     {
         id: "digital-sop-management",
@@ -811,7 +811,7 @@ export const projects = [
             "Better compliance adherence",
             "Enhanced quality control"
         ],
-        mainImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop&crop=center"
+        mainImage: "/assets/Project-Image/SOP.jpg"
     },
     {
         id: "intelligent-erp-system",
@@ -842,7 +842,7 @@ export const projects = [
             "Sustainable growth enablement",
             "Better decision-making"
         ],
-        mainImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&crop=center"
+        mainImage: "/assets/Project-Image/ERP.jpg"
     },
     {
         id: "mediguru",
